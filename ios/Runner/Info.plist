@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Hataysepetim</string>
+	<string>HataySepetim</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,6 +26,46 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+
+	<!-- ✅ URL Scheme'ler (url_launcher) -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>https</string>
+		<string>http</string>
+		<string>tel</string>
+		<string>mailto</string>
+	</array>
+
+	<!-- ✅ Firebase Cloud Messaging — proxy'yi devre dışı bırak (flutter_firebase_messaging best practice) -->
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+
+	<!-- ✅ WorkManager arka plan görevleri -->
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>be.tramckrijte.workmanager</string>
+	</array>
+
+	<!-- ✅ flutter_local_notifications — bildirim izni açıklaması -->
+	<key>NSUserNotificationUsageDescription</key>
+	<string>HataySepetim size sipariş güncellemeleri ve kampanyalar hakkında bildirim gönderir.</string>
+
+	<!-- ✅ image_picker — fotoğraf kütüphanesi -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Profil fotoğrafı veya ürün görseli eklemek için fotoğraf erişimi gereklidir.</string>
+
+	<!-- ✅ image_picker — kamera -->
+	<key>NSCameraUsageDescription</key>
+	<string>Fotoğraf çekmek için kamera erişimi gereklidir.</string>
+
+	<!-- ✅ file_picker — dosya erişimi -->
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Dosya seçmek ve yüklemek için erişim gereklidir.</string>
+
+	<!-- ✅ flutter_pdfview — PDF dosyaları için -->
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>PDF belgelerine erişmek için gereklidir.</string>
+
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
