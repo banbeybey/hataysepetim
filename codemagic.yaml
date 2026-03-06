@@ -1,17 +1,17 @@
 workflows:
   ios-app-store:
-    name: HataySepetim iOS — App Store
+    name: HataySepetim iOS App Store
     max_build_duration: 60
     instance_type: mac_mini_m1
 
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.hataysepetim.app  # ← Xcode'da ne yazdıysan o
+        bundle_identifier: com.hataysepetim.app
       vars:
         XCODE_WORKSPACE: "ios/Runner.xcworkspace"
         XCODE_SCHEME: "Runner"
-      flutter: stable      # pubspec sdk: >=3.0.0 → stable branch yeterli
+      flutter: stable
       xcode: latest
       cocoapods: default
 
@@ -29,12 +29,10 @@ workflows:
       - name: Get Flutter packages
         script: flutter pub get
 
-      - name: Firebase GoogleService-Info.plist kontrolü
+      - name: Check GoogleService-Info.plist
         script: |
-          # Firebase kullandığın için bu dosya zorunlu!
-          # Codemagic > App Settings > Environment files bölümüne ekle
           ls ios/Runner/GoogleService-Info.plist || {
-            echo "❌ GoogleService-Info.plist bulunamadı!"
+            echo "GoogleService-Info.plist not found!"
             exit 1
           }
 
@@ -43,7 +41,7 @@ workflows:
           cd ios
           pod install --repo-update
 
-      - name: Flutter build iOS (release, no-codesign)
+      - name: Flutter build iOS release
         script: |
           flutter build ios \
             --release \
@@ -51,7 +49,7 @@ workflows:
             --build-name=2.1.1 \
             --build-number=$BUILD_NUMBER
 
-      - name: Xcode archive & IPA export
+      - name: Xcode archive and export IPA
         script: |
           xcode-project use-profiles
           xcode-project build-ipa \
@@ -72,7 +70,7 @@ workflows:
         release_type: MANUAL
       email:
         recipients:
-          - mertsanverdi98@email.com   # ← kendi e-postanı yaz
+          - mertsanverdi98@gmail.com
         notify:
           success: true
           failure: true
