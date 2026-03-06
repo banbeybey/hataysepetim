@@ -72,7 +72,7 @@ workflows:
         release_type: MANUAL
       email:
         recipients:
-          - sen@email.com   # ← kendi e-postanı yaz
+          - mertsanverdi98@email.com   # ← kendi e-postanı yaz
         notify:
           success: true
           failure: true
