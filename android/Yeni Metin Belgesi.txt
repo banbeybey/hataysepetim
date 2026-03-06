@@ -1,0 +1,4 @@
+storePassword=787863
+keyPassword=787863
+keyAlias=upload
+storeFile=C:\\Users\\BANBEY\\upload-keystore.jks

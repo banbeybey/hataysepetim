@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089484635136",
+    "project_id": "hataysepetim",
+    "storage_bucket": "hataysepetim.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089484635136:android:6966c66824ecd29015ace5",
+        "android_client_info": {
+          "package_name": "com.hataysepetim.reyhanli"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf7XqYpZlU51INAT8VHh2lOHL_tWGLhZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

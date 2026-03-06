@@ -1,0 +1,4 @@
+[31mCould not find an option named "--stacktrace".[39m
+[31m[39m
+
+[31mRun 'flutter -h' (or 'flutter <command> -h') for available flutter commands and options.[39m
