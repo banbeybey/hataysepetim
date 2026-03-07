@@ -36,7 +36,7 @@
 		<string>mailto</string>
 	</array>
 
-	<!-- ✅ Firebase Cloud Messaging — proxy'yi devre dışı bırak (flutter_firebase_messaging best practice) -->
+	<!-- ✅ Firebase Cloud Messaging — proxy'yi devre dışı bırak -->
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
 
@@ -65,6 +65,15 @@
 	<!-- ✅ flutter_pdfview — PDF dosyaları için -->
 	<key>NSDownloadsFolderUsageDescription</key>
 	<string>PDF belgelerine erişmek için gereklidir.</string>
+
+	<!-- ✅ ATS — API ve WebView bağlantılarına izin ver -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 
 	<key>UIApplicationSceneManifest</key>
 	<dict>
