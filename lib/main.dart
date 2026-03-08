@@ -11,11 +11,7 @@ import 'services/siparis_bildirim_servisi.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Firebase başlat
   await Firebase.initializeApp();
-
-  // Bildirim servisini başlat (izin iste)
-  await SiparisBildirimServisi.instance.init();
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -24,6 +20,8 @@ void main() async {
   ));
 
   runApp(const HataySepetimApp());
+
+  await SiparisBildirimServisi.instance.init();
 }
 
 class HataySepetimApp extends StatelessWidget {
@@ -66,8 +64,10 @@ class HataySepetimApp extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14)),
               padding: const EdgeInsets.symmetric(vertical: 16),
-              textStyle:
-                  const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+              textStyle: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
         ),
