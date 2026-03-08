@@ -71,7 +71,15 @@ class HataySepetimApp extends StatelessWidget {
             ),
           ),
         ),
-        home: const SplashScreen(),
+        home: const Scaffold(
+          backgroundColor: Colors.red,
+          body: Center(
+            child: Text(
+              'ÇALIŞIYOR',
+              style: TextStyle(color: Colors.white, fontSize: 30),
+            ),
+          ),
+        ),
       ),
     );
   }
